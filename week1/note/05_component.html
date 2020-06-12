@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div>컴포넌트</div>
+            <app-header></app-heaer>
+        </header>
+        <content>
+
+        </content>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('app-contents', {
+            template: '<section></section>'
+        });
+
+        new Vue({
+            el: "#app",
+            // 지역 컴포넌트
+            components: {
+                'app-header': {
+                    template: '<h1>지역 컴포넌트</h1>'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

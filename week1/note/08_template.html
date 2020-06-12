@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message + ''}}</p>
+        <p>{{ extraMessage }}</p>
+        <!-- directive -->
+        <p v-if="show">반갑습니다.</p>
+        <input type="text" v-model="inputText">
+        <ul>
+            <li v-for="item in items">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: 'data message!',
+                show: false,
+                inputText: 'hello!!',
+                items: ['apple', 'google', 'facebook', 'naver', 'kakao', 'line']
+            },
+            computed: {
+                extraMessage: function() {
+                    return 'extra computed message';
+                }
+            },
+        });
+    </script>
+</body>
+</html>

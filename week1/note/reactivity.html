@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="app"></h1>
+
+    <script>
+        var div = document.querySelector("#app");
+        var str = "hello world";
+        div.innerText = str;
+
+
+        // reacitivity?
+        var obj = {};
+        Object.defineProperty(obj, 'str', {
+            // obj.str 했을 때 돌아가는 코드
+            get: function() {
+                console.log("getget");
+            },
+            // 'obj.str = ' 했을 때 동작하는 코드
+            set: function(newValue) {
+                console.log("setset", newValue);
+                div.innerText = newValue;
+            }
+        })
+    </script>
+</body>
+</html>
